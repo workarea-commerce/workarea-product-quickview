@@ -1,0 +1,13 @@
+module Workarea
+  decorate Catalog::Product, with: :quickview do
+    def quickview?
+      template.in?(quickview_templates)
+    end
+
+    private
+
+    def quickview_templates
+      Workarea.config.product_quickview_templates.map(&:to_s)
+    end
+  end
+end

@@ -1,0 +1,10 @@
+module Workarea
+  decorate Storefront::ProductsController, with: :product_quickview do
+    decorated { helper Storefront::ProductQuickviewHelper }
+
+    def show
+      super
+      render 'quickview' and return if @product.quickview? && request.xhr?
+    end
+  end
+end

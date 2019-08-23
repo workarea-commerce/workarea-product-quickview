@@ -1,0 +1,31 @@
+require 'test_helper'
+
+module Workarea
+  decorate Storefront::AnalyticsSystemTest, with: :product_quickview do
+    def test_announcing_product_quickview_event
+      Workarea.with_config do |config|
+        config.product_quickview_templates = %i(
+          generic
+          test_product
+        )
+
+        visit storefront.category_path(@category)
+
+        first('.product-summary').hover
+        click_link t('workarea.storefront.products.quick_view')
+
+        wait_for_xhr
+
+        events = find_analytics_events(for_event: 'productQuickview')
+        assert_equal(1, events.count)
+        payload = events.first['arguments'].first
+        assert_equal('PROD2', payload['id'])
+        assert_equal('Test Product 2', payload['name'])
+        assert_equal(false, payload['sale'])
+        assert_equal(12, payload['price'])
+        assert_equal('Test Category', payload['category'])
+        assert_page_view
+      end
+    end
+  end
+end

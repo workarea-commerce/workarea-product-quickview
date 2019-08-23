@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    #QUICKVIEW-BUTTON
+\*------------------------------------*/
+
+.quickview-button {
+    @include center(horizontal);
+    top: $spacing-unit;
+    width: 75%;
+
+    @include respond-to($medium-breakpoint) {
+        display: none;
+    }
+
+    .touch &,
+    .product-summary:hover & {
+        @include respond-to($medium-breakpoint) {
+            display: inline-block;
+        }
+    }
+}
