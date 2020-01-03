@@ -36,6 +36,7 @@ task :release do
   system 'git push origin HEAD --follow-tags'
 
   system 'gem build workarea-product_quickview.gemspec'
+  system "gem push workarea-product_quickview-#{Workarea::ProductQuickview::VERSION}.gem"
   system "gem push workarea-product_quickview-#{Workarea::ProductQuickview::VERSION}.gem --host #{host}"
   system "rm workarea-product_quickview-#{Workarea::ProductQuickview::VERSION}.gem"
 end
