@@ -2,7 +2,7 @@ require 'test_helper'
 
 module Workarea
   module Storefront
-    class ProductQuickviewSystemTest < Workarea::SystemTest
+    class ProductsQuickviewSystemTest < Workarea::SystemTest
       include Storefront::SystemTest
 
       setup :set_products
