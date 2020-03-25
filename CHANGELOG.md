@@ -1,3 +1,17 @@
+Workarea Product Quickview 2.0.3 (2020-03-25)
+--------------------------------------------------------------------------------
+
+*   Fix test class name to match path
+
+    Fixes #4
+    Ben Crouse
+
+*   Initial commit on master
+
+    Curt Howard
+
+
+
 Workarea Product Quickview 2.0.2 (2019-08-23)
 --------------------------------------------------------------------------------
 
