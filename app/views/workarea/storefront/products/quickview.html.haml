@@ -1,5 +1,3 @@
 - cache "#{@product.cache_key}/quickview", expires_in: 1.hour do
-  = render_schema_org(product_schema(@product, related_products: @product.recommendations))
-
   .product-details{ class: "product-details--#{@product.template}", data: { analytics: product_quickview_analytics_data(@product).to_json } }
     = render "workarea/storefront/products/templates/#{@product.template}", product: @product
