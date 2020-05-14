@@ -1,3 +1,13 @@
+Workarea Product Quickview 2.0.4 (2020-05-14)
+--------------------------------------------------------------------------------
+
+*   Remove schema.org data from quickview HTML
+
+    This is causing jQuery to open extra dialogs. Removing it seems like an acceptable solution because 1) search engines and other crawlers will be following detail page links whether or not they're running JS and 2) because of the jQuery problems this isn't currently being output anyways.
+    Ben Crouse
+
+
+
 Workarea Product Quickview 2.0.3 (2020-03-25)
 --------------------------------------------------------------------------------
 
